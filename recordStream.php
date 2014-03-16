@@ -6,7 +6,6 @@
 
 	$rec = false;
 	foreach ($out as $proc) {
-		
 		exec("ps -fp ".$proc, $out2);
 		if (preg_match("!$channel!", $out2[1])) {
 			$rec = true;
@@ -16,7 +15,7 @@
 	if (!$rec) {
 		if (checkAvailable($channel, 0)) {
 			echo "Channel online ... ";
-			//record($channel, 1);
+			record($channel, 1);
 			echo "Recording";
 		}
 		else {
